@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>AIパスポート</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>  
+
+<input type="checkbox" class="checkbox" checked>
+
+<div class="left-trigger"></div>
+<div class="sidebar">生成AIパスポート試験対策用ToDoリスト</div>
+
+<div class="main">
+
+<div id="homeView">
+ <h2>ホーム</h2>
+ <div id="overallProgress"></div>
+ <div id="lessonList"></div>
+ 
+</div>
+
+<div id="chapterView" class="hidden">
+  <button class="btn" onclick="goHome()">ホーム画面に戻る</button>
+
+  <h2 id="chapterTitle">第１章</h2>
+  <div id="chapterProgress" style="margin-top:20px;">
+  </div>
+
+  <div style="margin-top:20px;">
+    <button class="btn start" onclick="start(state.chapter)">開始</button>
+    <button class="btn review" onclick="startReview(state.chapter)">復習</button>
+  </div>
+
+
+</div>
+
+<!-- 合格モーダル -->
+<div id="resultModal"  style="position:fixed;
+    display:none;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    align-items:center;
+    justify-content:center;
+    ">
+
+ <div style="background:#fff;padding:30px;border-radius:16px;text-align:center;">
+   <h2>おめでとう！！合格！</h2>
+   <p>全章クリアしました！</p>
+   <button class="btn" onclick="closeModal()">閉じる</button>
+ </div>
+</div>
+
+<div id="quizView" class="hidden">
+ <button class="btn" onclick="goHome()">ホーム画面に戻る</button>
+ <h3 id="title"></h3>
+ <p id="question"></p>
+ <div id="answers" class="answers"></div>
+ <button class="btn" onclick="next()">次へ</button>
+ 
+
+ <div id="quizProgress">
+  <div class="progress-bar">
+    <div id="quizProgressFill" class="progress-fill"></div>
+  </div>
+  <small id="quizProgressText"></small>
+</div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
