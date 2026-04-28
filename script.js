@@ -187,7 +187,7 @@ function startAll(){
  state.index = 0;
  state.score = 0;
  state.mode = "all";
- state.wrongAll = [];
+ state.allWrong = [];
 
  // 全問題＋選択肢ランダム
  state.currentList = shuffle(
