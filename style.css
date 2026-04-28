@@ -36,6 +36,9 @@ body{
     position:relative;
     overflow:hidden;
     border-radius:12px;
+
+    transition:.2s;
+    cursor:pointer;
 }
 
 #lessonList{
@@ -97,10 +100,6 @@ body{
   transform:translate(-50%,-60%);
 }
 
-.lesson{
-  transition:.2s;
-  cursor:pointer;
-}
 
 .lesson:hover{
   background:#f1f5ff;

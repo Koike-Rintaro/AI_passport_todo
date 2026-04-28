@@ -37,6 +37,24 @@
 
 </div>
 
+<div id="quizView" class="hidden">
+  <button class="btn" onclick="goHome()">ホーム画面に戻る</button>
+  <h3 id="title"></h3>
+  <p id="question"></p>
+  <div id="answers" class="answers"></div>
+  <button class="btn" onclick="next()">次へ</button>
+  
+  
+  <div id="quizProgress">
+    <div class="progress-bar">
+      <div id="quizProgressFill" class="progress-fill"></div>
+    </div>
+    <small id="quizProgressText"></small>
+  </div>
+</div>
+
+</div>
+
 <!-- 合格モーダル -->
 <div id="resultModal"  style="position:fixed;
     display:none;
@@ -55,24 +73,6 @@
    <p>全章クリアしました！</p>
    <button class="btn" onclick="closeModal()">閉じる</button>
  </div>
-</div>
-
-<div id="quizView" class="hidden">
- <button class="btn" onclick="goHome()">ホーム画面に戻る</button>
- <h3 id="title"></h3>
- <p id="question"></p>
- <div id="answers" class="answers"></div>
- <button class="btn" onclick="next()">次へ</button>
- 
-
- <div id="quizProgress">
-  <div class="progress-bar">
-    <div id="quizProgressFill" class="progress-fill"></div>
-  </div>
-  <small id="quizProgressText"></small>
-</div>
-</div>
-
 </div>
 
 <script src="script.js"></script>
