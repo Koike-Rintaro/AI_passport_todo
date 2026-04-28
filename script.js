@@ -187,7 +187,7 @@ function startAll(){
  state.index = 0;
  state.score = 0;
  state.mode = "all";
- state.wrongAll = [];
+ state.allWrong = [];
 
  // 全問題＋選択肢ランダム
  state.currentList = shuffle(
@@ -263,7 +263,8 @@ function startReview(ch){
 }
 
 function startAllReview(){
- if(!state.wrongAll || state.wrongAll.length === 0){
+ if(!state.
+  wrongAll || state.wrongAll.length === 0){
    alert("復習問題なし");
    return;
  }
@@ -311,6 +312,7 @@ function getList(){
  return state.currentList;
 }
 
+//問題と選択肢を画面に表示する関数
 function load(){
  const list = getList();
  const q=getList()[state.index];
@@ -334,7 +336,7 @@ function load(){
    box.appendChild(d);
  });
 }
-
+//選択肢選ぶと呼ばれる関数
 function select(i,el){
  state.selected=i;
  document.querySelectorAll("#answers div").forEach(d=>d.classList.remove("selected"));
