@@ -361,16 +361,13 @@ function next(){
     }
 
   }else{
-  if(state.mode==="normal"){
+   if(state.mode==="normal"){
     state.wrong[state.chapter].push(q);
-  }
-  if(state.mode==="allReview"){   
-  state.allProgress = state.score;
- }
-  if(state.mode==="all"){
+   }
+   if(state.mode==="all"){
     state.allWrong.push(q);
+   }
   }
-}
 
   state.index++;
 
@@ -381,8 +378,10 @@ function next(){
     }
 
    const total = state.mode === "all"
-  ? getAllQuestions().length
-  : questions[state.chapter].length;
+   ? getAllQuestions().length
+   : state.mode === "allReview" 
+   ? getAllQuestions().length
+   : questions[state.chapter].length;
 
 if(state.score === total){
   if(state.mode !== "all"){
@@ -391,7 +390,7 @@ if(state.score === total){
   }
 }
 
-     if(state.mode==="all"){
+     if(state.mode==="all" || state.mode === "allReview"){
     state.allProgress = state.score;
   }
 
