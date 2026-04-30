@@ -86,7 +86,8 @@ let state={
  checked:{},
  allCleared:false,
  currentList:[],
- allProgress: 0
+ allProgress: 0,
+ firstClearShown: false
 };
 
 
@@ -406,8 +407,8 @@ if(state.score === total){
     }).length;
 
     // ★ここが超重要（フラグ追加）
-    if(cleared === totalChapters && !state.allCleared){
-      state.allCleared = true;
+    if(cleared === totalChapters && !state.firstClearShown){
+      state.firstClearShown = true;
       showModal();
 
         setTimeout(() => {
@@ -480,6 +481,7 @@ function saveData(){
  localStorage.setItem("wrong",JSON.stringify(state.wrong));
  localStorage.setItem("allProgress", JSON.stringify(state.allProgress));
  localStorage.setItem("allWrong", JSON.stringify(state.allWrong));
+ localStorage.setItem("firstClearShown", JSON.stringify(state.firstClearShown));
 }
 
 document.addEventListener("DOMContentLoaded",()=>{
@@ -488,5 +490,6 @@ document.addEventListener("DOMContentLoaded",()=>{
  state.wrong=JSON.parse(localStorage.getItem("wrong"))||{};
  state.allProgress = JSON.parse(localStorage.getItem("allProgress")) || 0;
  state.allWrong = JSON.parse(localStorage.getItem("allWrong")) || [];
+ state.firstClearShown = JSON.parse(localStorage.getItem("firstClearShown")) || false;
  renderHome();
 });
